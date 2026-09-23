@@ -219,6 +219,7 @@ footer{background:var(--nk)}
   .sc-tag{flex:none;font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--acc-lift);border:1px solid color-mix(in srgb,var(--acc-lift) 55%,#fff);border-radius:6px;padding:5px 9px}
   .sc-btn{flex:1;min-height:52px;display:flex;align-items:center;justify-content:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:800;font-size:15px;color:#fff;text-decoration:none;background:linear-gradient(180deg,var(--accent),var(--accent-dark));border-radius:12px;box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 8px 18px -8px var(--glow)}
 </style>
+<script defer src="measurement.js"></script>
 </head>
 <body>
 <div class="pr-bar">本ページはプロモーション（アフィリエイト広告）を含みます</div>
@@ -237,12 +238,12 @@ footer{background:var(--nk)}
 <footer><div class="wrap">
   <p class="disc">※本ページはアフィリエイトプログラムを利用しており、サービスへの登録・利用により当サイトが報酬を得る場合があります。掲載内容は各サービスの公式情報をもとに作成しています。最新・正確な情報は各公式サイトをご確認ください。</p>
   <p>© 公務員からの転職 タイプ診断</p>
-</div></footer>
+</div><p style="margin-top:16px"><a href="privacy.html">アクセス解析・広告について</a></p></footer>
 <script>
 const SERVICES={
  miidas:{type:'まず自分を知りたい「自己分析」タイプ',logo:'🔎',name:'ミイダス',tag:'可能性診断で適職・市場価値がわかる',line:'診断で適職・市場価値がわかる',
    feat:['コンピテンシー診断で「向いている仕事」が分かる','市場価値・適正年収を無料で診断できる','利用企業44万社以上','書類選考なしの面接確約オファーも届く'],
-   url:'https://px.a8.net/svt/ejp?a8mat=3T26WS+D5X2B6+3AW0+61RIA',cta:'無料で可能性診断を受ける →'},
+   url:'https://px.a8.net/svt/ejp?a8mat=3T26WS+D5X7PM+3AW0+61RIA',cta:'無料で可能性診断を受ける →'},
  ragent:{type:'プロと二人三脚「じっくり相談」タイプ',logo:'🤝',name:'リクルートエージェント',tag:'非公開求人が豊富な総合エージェント',line:'非公開25万件以上。プロが伴走',
    feat:['非公開25万件以上＋公開約75万件','専任アドバイザーが選考対策・条件交渉を代行','転職決定数の実績が豊富','はじめての転職でも安心のサポート'],
    url:'https://t.afi-b.com/visit.php?a=968723-W528197J&p=3919027v',cta:'無料で求人を紹介してもらう →'},
@@ -307,7 +308,7 @@ function showResult(){document.getElementById('loading').classList.remove('show'
   '<div style="font-size:12.5px;color:var(--muted);margin-bottom:14px">複数に登録するほど、出会える求人と選択肢は増えます（すべて無料）。</div>'+
   others.map(miniCard).join('')+
   '<div style="text-align:center;font-weight:700;font-size:13.5px;color:var(--muted);margin:26px 0 12px">▼ あわせて使いたい｜応募前の企業リサーチ・選考対策に</div>'+
-  '<div class="card"><div class="card-top"><div class="card-logo">💼</div><div class="card-tt"><b>ワンキャリア転職</b><span>企業の年収・口コミ・選考対策がわかる転職サイト</span></div></div><div class="card-body"><ul class="feat"><li>気になる企業の「リアルな年収・社員クチコミ」を無料でチェックできる</li><li>実際の「選考体験談」で面接・選考の対策ができる</li><li>その企業への／からのキャリアパスがわかる</li><li>応募前の企業研究にぴったり。登録は無料</li></ul><a href="https://px.a8.net/svt/ejp?a8mat=4B650G+75SPPU+5O7E+BYT9F" class="cta">無料で企業のクチコミ・年収を見る →</a><p class="note">登録・利用はすべて無料です</p></div></div>'+
+  '<div class="card"><div class="card-top"><div class="card-logo">💼</div><div class="card-tt"><b>ワンキャリア転職</b><span>企業の年収・口コミ・選考対策がわかる転職サイト</span></div></div><div class="card-body"><ul class="feat"><li>気になる企業の「リアルな年収・社員クチコミ」を無料でチェックできる</li><li>実際の「選考体験談」で面接・選考の対策ができる</li><li>その企業への／からのキャリアパスがわかる</li><li>応募前の企業研究にぴったり。登録は無料</li></ul><a href="https://px.a8.net/svt/ejp?a8mat=4B650G+75SV4A+5O7E+BY642" class="cta">無料で企業のクチコミ・年収を見る →</a><p class="note">登録・利用はすべて無料です</p></div></div>'+
   '<button class="restart" onclick="restart()">↺ もう一度診断する</button>';
  res.classList.add('show');window.scrollTo({top:0,behavior:'smooth'});}
 function restart(){current=0;answers.length=0;document.getElementById('result').classList.remove('show');renderQuestion();}
@@ -343,10 +344,10 @@ renderQuestion();
     for(var i=0;i<cards.length;i++){
       var body=cards[i].querySelector('.card-body');if(!body)continue;
       var cta=firstCta(cards[i]);if(!cta)continue;
-      if(i===0&&!body.querySelector('.cta-lead')){cta.insertAdjacentHTML('beforebegin','<p class="cta-lead">好条件の求人ほど“表に出ないまま”決まっていきます。登録しておくほど、出会える数が増えます（無料）。</p>');}
-      if(!body.querySelector('.cta-sub')){var s=document.createElement('a');s.className='cta-sub';s.setAttribute('href',cta.getAttribute('href'));s.textContent='▶ まずは無料登録だけ済ませておく';cta.insertAdjacentElement('afterend',s);}
+      if(i===0&&!body.querySelector('.cta-lead')){cta.insertAdjacentHTML('beforebegin','<p class="cta-lead">希望する働き方・対象条件・サポート内容を確認してから、利用するサービスを選びましょう。</p>');}
+      if(!body.querySelector('.cta-sub')){var s=document.createElement('a');s.className='cta-sub';s.setAttribute('href',cta.getAttribute('href'));s.textContent='▶ 利用条件・申し込み手順を確認する';cta.insertAdjacentElement('afterend',s);}
       var note=body.querySelector('.note');
-      if(note&&!body.querySelector('.assure')){note.insertAdjacentHTML('beforebegin','<div class="assure"><span>無料</span><span>在職中でもOK</span><span>登録は約1分</span></div>');note.textContent='掲載内容は各サービスの公式情報をもとに記載しています';}
+      if(note&&!body.querySelector('.assure')){note.insertAdjacentHTML('beforebegin','<div class="assure"><span>無料</span><span>在職中でもOK</span><span>手順は公式サイトで確認</span></div>');note.textContent='掲載内容は各サービスの公式情報をもとに記載しています';}
     }
     var tb=result.querySelector('.type-box');
     if(tb&&!result.querySelector('.jump-service')){var j=document.createElement('button');j.type='button';j.className='jump-service';j.textContent='▶ あなたに合うサービスを今すぐ見る';j.addEventListener('click',function(){var c=result.querySelector('.card');if(c)c.scrollIntoView({behavior:'smooth',block:'start'});});tb.insertAdjacentElement('afterend',j);}
